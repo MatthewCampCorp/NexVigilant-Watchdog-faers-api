@@ -1,0 +1,42 @@
+{
+  "project": {
+    "type": "firebase",
+    "framework": "typescript",
+    "structure": "src/",
+    "testFramework": "jest"
+  },
+  "ai": {
+    "model": "claude-3.5-sonnet",
+    "context": [
+      "Firebase development project with TypeScript",
+      "Follow Firebase v9+ modular SDK patterns",
+      "Implement comprehensive error handling",
+      "Use modern JavaScript/TypeScript best practices",
+      "Include unit and integration tests",
+      "Add proper security considerations",
+      "Optimize for performance and scalability"
+    ]
+  },
+  "codeStyle": {
+    "language": "typescript",
+    "framework": "firebase",
+    "patterns": ["modular", "functional", "async-await"],
+    "testing": "jest",
+    "linting": "eslint"
+  },
+  "templates": {
+    "function": "templates/firebase-function.js",
+    "component": "templates/react-component.jsx",
+    "test": "templates/test-template.js"
+  },
+  "rules": [
+    "Always use Firebase v9+ modular SDK syntax",
+    "Include comprehensive JSDoc comments", 
+    "Implement proper error handling with try/catch",
+    "Use async/await for asynchronous operations",
+    "Write unit tests for all functions",
+    "Follow Firebase security best practices",
+    "Optimize for performance and scalability",
+    "Include proper TypeScript types"
+  ]
+}
