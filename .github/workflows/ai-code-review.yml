@@ -1,0 +1,31 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: npm test
+        
+      - name: Firebase Security Rules Test
+        run: firebase emulators:exec --only firestore "npm run test:rules"
+        
+      - name: Performance Analysis
+        run: npm run analyze
+        
+      - name: AI Code Quality Check
+        run: echo "AI analysis would run here with Claude Code integration"
