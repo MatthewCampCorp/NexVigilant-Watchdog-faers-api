@@ -1,0 +1,34 @@
+name: Claude Code Integration
+
+on:
+  issues:
+    types: [opened, edited]
+    
+jobs:
+  claude-code-setup:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'claude-code')
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Extract Claude Code Prompt
+      run: |
+        echo "Extracting Claude Code prompt from issue..."
+        # Future: Automatically extract and process prompts
+        
+    - name: Setup Development Branch
+      run: |
+        git checkout -b feature/issue-${{ github.event.issue.number }}
+        git push origin feature/issue-${{ github.event.issue.number }}
+        
+    - name: Comment on Issue
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '? Claude Code setup complete! Branch `feature/issue-${{ github.event.issue.number }}` created for development.'
+          })
