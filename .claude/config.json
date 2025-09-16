@@ -1,0 +1,28 @@
+{
+  "project": {
+    "type": "firebase",
+    "framework": "javascript",
+    "structure": "src/"
+  },
+  "ai": {
+    "model": "claude-3.5-sonnet",
+    "context": [
+      "This is a Firebase project with authentication, Firestore, and Cloud Functions",
+      "Follow Firebase best practices and security guidelines",
+      "Use modern JavaScript/TypeScript patterns",
+      "Include comprehensive error handling and logging"
+    ]
+  },
+  "templates": {
+    "function": "src/templates/function.js",
+    "component": "src/templates/component.js", 
+    "test": "src/templates/test.js"
+  },
+  "rules": [
+    "Always include JSDoc comments",
+    "Use async/await for asynchronous operations",
+    "Implement proper error handling with try/catch",
+    "Follow Firebase security best practices",
+    "Write unit tests for all functions"
+  ]
+}
